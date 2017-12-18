@@ -1,0 +1,126 @@
+<!doctype html>
+
+<html>
+  <head>
+    <script language="javascript">
+        // alert(document); // [object HTMLDocument]
+        // alert(document.getElementsByTagName('html')[0]); // [object HTMLHtmlElement]
+        // alert(document.getElementsByTagName('head')[0]); // [object HTMLHeadElement]
+        // alert(document.getElementsByTagName('body')[0]); // undefined
+        // alert(document.readyState); //loading
+
+        window.onload  = function() {
+            console.warn("This is init window load event!");
+        }
+        window.onloadeddata  = function() {
+            console.warn("fire window onloadeddata event!");
+        }
+        window.onloadedmetadata  = function() {
+            console.warn("fire window onloadedmetadata event!");
+        }
+        window.onloadstart  = function() {
+            console.warn("fire window onloadstart event!");
+        }
+        window.onloadend  = function() {
+            console.warn("fire window onloadend event!");
+        }
+
+
+        document.onload = function() {
+            console.log("fire document load event!");
+        }
+        document.onloadeddata = function() {
+            console.log("fire document onloadeddata event!");
+        }
+        document.onloadedmetadata = function() {
+            console.log("fire document onloadedmetadata event!");
+        }
+        document.onloadstart = function() {
+            console.log("fire document onloadstart event!");
+        }
+        document.onloadend = function() {
+            console.log("fire document onloadend event!");
+        }
+    </script>
+
+    <script>
+       var head= document.getElementsByTagName('head')[0];
+       var script= document.createElement('script');
+       script.type= 'text/javascript';
+       script.src= './scripts/script_2.js';
+       head.appendChild(script);
+   </script>
+    <title>onload test</title>
+    <script defer="defer">
+        console.log("inner nested script")
+    </script>
+    <script src="./scripts/script_1.js"></script>
+    <script async src="https://www.google.com/xjs/_/js/k=xjs.qs.zh_CN.o8eAOzTg5Uo.O/m=sx,c,elog,cdos,sb_mob,mbsf,hsm,r,qim,pvtlp,jsa,d,csi/am=AItsWSaYkANkrmICZnBfaARwJiA/rt=j/d=1/exm=quantum/t=zcms/rs=ACT90oHOujDlaj7IESgzvSnbw6WILUORiw"></script>
+    <script async src="https://www.google.com/xjs/_/js/k=xjs.qs.zh_CN.o8eAOzTg5Uo.O/m=sx,c,elog,cdos,sb_mob,mbsf,hsm,r,qim,pvtlp,jsa,d,csi/am=AItsWSaYkANkrmICZnBfaARwJiA/rt=j/d=1/exm=quantum/t=zcms/rs=ACT90oHOujDlaj7IESgzvSnbw6WILUORiw"></script>
+    <script defer="defer" src="https://www.google.com/xjs/_/js/k=xjs.qs.zh_CN.o8eAOzTg5Uo.O/m=sx,c,elog,cdos,sb_mob,mbsf,hsm,r,qim,pvtlp,jsa,d,csi/am=AItsWSaYkANkrmICZnBfaARwJiA/rt=j/d=1/exm=quantum/t=zcms/rs=ACT90oHOujDlaj7IESgzvSnbw6WILUORiw"></script>
+    <script>
+        // 没有调用
+        setTimeout(()=>{
+            function load() {
+                console.info("This is later window load event!");
+            }
+            window.onload = load;
+        }, 3000);
+    </script>
+  </head>
+  <body onload="console.warn('body!')">
+    <p>The load event fires when the document has finished loading!</p>
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?ewrwtwt" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?sfgs" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?ffff" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?df" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?ewwe5tdfrwtwt" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?wrtrwf" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?rdfgs" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?dshsf" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?wtfg" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?dfgh" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?wrg" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?dfgh" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?bdgh" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?sdfqer" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+    <img src="https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?klasf" style="transition: opacity 1000ms; opacity: 1;" onload="console.info('img loaded!')">
+
+  </body>
+  <script defer="defer" src="https://www.google.com/xjs/_/js/k=xjs.qs.zh_CN.o8eAOzTg5Uo.O/m=sx,c,elog,cdos,sb_mob,mbsf,hsm,r,qim,pvtlp,jsa,d,csi/am=AItsWSaYkANkrmICZnBfaARwJiA/rt=j/d=1/exm=quantum/t=zcms/rs=ACT90oHOujDlaj7IESgzvSnbw6WILUORiw"></script>
+  <script>
+        var head= document.getElementsByTagName('head')[0];
+         var script= document.createElement('script');
+         script.type= 'text/javascript';
+         script.src= 'https://acs.m.taobao.com/h5/mtop.alitrip.travel.itemsearch/1.1?callback=mtopjsonp1&type=originaljsonp&api=mtop.alitrip.travel.itemsearch&v=1.1&data=%7B%22source%22%3A%22LIST_WIRELESS%22%2C%22searchType%22%3A%22TRIP_CAR%22%2C%22pageSize%22%3A10%2C%22context%22%3A%22%3B%22%2C%22query%22%3A%22%E7%BE%8E%E5%9B%BD%22%2C%22from%22%3A%22%E7%A6%8F%E5%B7%9E%22%2C%22conditions%22%3A%22%22%2C%22startRow%22%3A0%2C%22subType%22%3A%22%22%7D&ttid=2017%40weex_h5_0.12.13&appKey=12574478&t=1513220540460&sign=bd8915f0accf7e7a9d64fd2aec5da25a';
+         head.appendChild(script);
+    </script>
+        <script>
+            setTimeout(()=>{
+                var head= document.getElementsByTagName('head')[0];
+                var script= document.createElement('script');
+                script.type= 'text/javascript';
+                script.src= 'https://acs.m.taobao.com/h5/mtop.alitrip.travel.itemsearch/1.1?callback=mtopjsonp1&type=originaljsonp&api=mtop.alitrip.travel.itemsearch&v=1.1&data=%7B%22source%22%3A%22LIST_WIRELESS%22%2C%22searchType%22%3A%22TRIP_CAR%22%2C%22pageSize%22%3A10%2C%22context%22%3A%22%3B%22%2C%22query%22%3A%22%E7%BE%8E%E5%9B%BD%22%2C%22from%22%3A%22%E7%A6%8F%E5%B7%9E%22%2C%22conditions%22%3A%22%22%2C%22startRow%22%3A0%2C%22subType%22%3A%22%22%7D&ttid=2017%40weex_h5_0.12.13&appKey=12574478&t=1513220540460&sign=bd8915f0accf7e7a9d64fd2aec5da25a';
+                head.appendChild(script);
+            }, 0);
+            setTimeout(()=>{
+                var head= document.getElementsByTagName('head')[0];
+                var script= document.createElement('script');
+                script.type= 'text/javascript';
+                script.src= 'https://acs.m.taobao.com/h5/mtop.alitrip.travel.itemsearch/1.1?callback=mtopjsonp1&type=originaljsonp&api=mtop.alitrip.travel.itemsearch&v=1.1&data=%7B%22source%22%3A%22LIST_WIRELESS%22%2C%22searchType%22%3A%22TRIP_CAR%22%2C%22pageSize%22%3A10%2C%22context%22%3A%22%3B%22%2C%22query%22%3A%22%E7%BE%8E%E5%9B%BD%22%2C%22from%22%3A%22%E7%A6%8F%E5%B7%9E%22%2C%22conditions%22%3A%22%22%2C%22startRow%22%3A0%2C%22subType%22%3A%22%22%7D&ttid=2017%40weex_h5_0.12.13&appKey=12574478&t=1513220540460&sign=bd8915f0accf7e7a9d64fd2aec5da25a';
+                head.appendChild(script);
+            }, 1000);
+            setTimeout(()=>{
+                var body= document.getElementsByTagName('body')[0];
+                var img= document.createElement('img');
+                img.src= 'https://img.alicdn.com/i4/TB1wwKBinnI8KJjy0FfR1kdoVXa_041327.jpg?23456789';
+                img.onload = ()=>{
+                    console.info('dynamic img loaded!')
+                }
+                body.appendChild(img);
+            }, 0);
+        </script>
+        <script>
+            //alert(document.readyState);//loading
+        </script>
+</html>
